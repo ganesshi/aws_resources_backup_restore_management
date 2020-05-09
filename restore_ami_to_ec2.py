@@ -7,8 +7,7 @@ def lambda_handler(event, context):
 
     # Iterate over regions
     for region in regions:
-        print
-        "Checking region %s " % region['RegionName']
+        print"Checking region %s " % region['RegionName']
         reg = region['RegionName']
 
         # Connect to region
