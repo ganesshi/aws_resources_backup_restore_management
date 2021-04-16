@@ -13,7 +13,6 @@ def lambda_handler(event, context):
 
         # Connect to region
         ec2 = boto3.client('ec2', region_name=reg)
-
         # Get all in-use volumes in all regions
         result = \
         ec2.ec2.describe_instances(Filters=[{'Name': 'instance-type', 'Values': ['t2.micro']}])['Reservations'][0][
