@@ -2,6 +2,11 @@ pipeline {
     agent any
 
     stages {
+        stage('Buzz Buzz') {
+            steps {
+                echo 'Buzz buzz stage...'
+            }
+        }
         stage('Build') {
             steps {
                 echo 'Building in region $Region ..'
