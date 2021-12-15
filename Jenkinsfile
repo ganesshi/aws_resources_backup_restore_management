@@ -26,7 +26,7 @@ pipeline {
           }
         }
 
-        stage('') {
+        stage('error') {
           steps {
             sleep 100
           }
@@ -36,8 +36,19 @@ pipeline {
     }
 
     stage('Test') {
-      steps {
-        echo 'Testing..'
+      parallel {
+        stage('Test') {
+          steps {
+            echo 'Testing..'
+          }
+        }
+
+        stage('Test_message') {
+          steps {
+            echo 'Testing steps 1'
+          }
+        }
+
       }
     }
 
