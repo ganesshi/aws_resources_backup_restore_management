@@ -1,26 +1,40 @@
 pipeline {
-    agent any
-
-    stages {
+  agent any
+  stages {
+    stage('Buzz Buzz') {
+      parallel {
         stage('Buzz Buzz') {
-            steps {
-                echo 'Buzz buzz stage...'
-            }
+          steps {
+            echo 'Buzz buzz stage...'
+          }
         }
-        stage('Build') {
-            steps {
-                echo 'Building in region $Region ..'
-            }
+
+        stage('') {
+          steps {
+            echo 'Step in Buzz Buzz stage'
+          }
         }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
+
+      }
     }
+
+    stage('Build') {
+      steps {
+        echo 'Building in region $Region ..'
+      }
+    }
+
+    stage('Test') {
+      steps {
+        echo 'Testing..'
+      }
+    }
+
+    stage('Deploy') {
+      steps {
+        echo 'Deploying....'
+      }
+    }
+
+  }
 }
