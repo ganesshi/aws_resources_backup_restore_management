@@ -9,7 +9,7 @@ pipeline {
           }
         }
 
-        stage('') {
+        stage('error') {
           steps {
             echo 'Step in Buzz Buzz stage'
           }
@@ -19,8 +19,19 @@ pipeline {
     }
 
     stage('Build') {
-      steps {
-        echo 'Building in region $Region ..'
+      parallel {
+        stage('Build') {
+          steps {
+            echo 'Building in region $Region ..'
+          }
+        }
+
+        stage('') {
+          steps {
+            sleep 100
+          }
+        }
+
       }
     }
 
