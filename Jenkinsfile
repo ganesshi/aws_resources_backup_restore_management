@@ -60,7 +60,7 @@ pipeline {
           }
         }
 
-        stage('') {
+        stage('error') {
           steps {
             timestamps()
           }
@@ -69,5 +69,8 @@ pipeline {
       }
     }
 
+  }
+  environment {
+    name = 'Ganesh'
   }
 }
