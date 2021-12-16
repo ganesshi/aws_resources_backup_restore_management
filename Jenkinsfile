@@ -60,9 +60,9 @@ pipeline {
           }
         }
 
-        stage('error') {
+        stage('parallel_stage_deploy') {
           steps {
-            timestamps()
+            echo 'Parallel stage 1'
           }
         }
 
